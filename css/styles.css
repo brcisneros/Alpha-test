@@ -1,0 +1,146 @@
+*{
+    font-family: Montserrat;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+    color: currentColor;
+}
+
+.button{
+    color: white;
+    background-color: #dd71c6;
+}
+
+.button-2{
+    color: white;
+    background-color: #FFCF54;
+}
+
+h1, h2{
+    font-family: Libre Baskerville;
+    font-weight: 100;
+}
+
+header {
+    width: 100%;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+  }
+  
+  .button-toggle-menu {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    cursor: pointer;
+    font-size: 25px;
+    padding: 10px 20px;
+  }
+  
+  .overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(255, 217, 0, .85);
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s opacity ease-in-out;
+  }
+  
+  .toggle-menu {
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+  }
+  .toggle-menu:checked ~ nav {
+    transform: translateX(0);
+  }
+  .toggle-menu:checked ~ .overlay {
+    pointer-events: initial;
+    opacity: 1;
+  }
+  
+  nav {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 300px;
+    transform: translateX(-100%);
+    will-change: transform;
+    transition: 0.3s transform linear;
+    z-index: 1;
+  }
+  nav ul {
+    list-style: none;
+    padding: 20px 0;
+    margin: 0;
+  }
+  nav ul li {
+    padding: 10px 20px;
+  }
+
+.countdown{
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, .5);
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+}
+
+#intro{
+    background-color: #FFD900;
+    padding-top: 10vh;
+}
+
+#back{
+    position: absolute;
+    z-index: -1;
+    left: -160%;
+}
+
+#perks{
+    background-color: #dd71c6;
+}
+
+#functioning{
+    background-color: #73c3f4;
+    color: white;
+}
+
+/* ------------------------------------------------------------- */
+
+@media (min-width: 1024px){
+
+    header{
+        width: 75%;
+        margin: 0 auto;
+    }
+
+    nav{
+        position: relative;
+        transform: none;
+        width: 100%;
+    }
+
+    nav ul li{
+        display: inline-block;
+        font-size: 1.5vh;
+        padding: 5px 10px;
+
+    }
+
+    .button-toggle-menu {
+
+        display: none;
+
+    }
+}
