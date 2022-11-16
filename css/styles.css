@@ -15,9 +15,12 @@ body{
   line-height: 1.5rem;
 }
 
-
 img{
   width: 100%;
+}
+
+.smaller-text{
+  font-size: smaller;
 }
 
 .center-text{
@@ -26,6 +29,7 @@ img{
 
 .button, .button-2{
   color: white;
+  font-weight: bold;
   background-color: #dd71c6;
   margin: 0 auto;
   padding: 3vw 6vw;
@@ -38,10 +42,14 @@ img{
 h1, h2{
   font-family: Libre Baskerville;
   font-weight: 100;
-  text-align: center;
   font-size: 2rem;
   line-height: 2.5rem;
   width: 100%;
+}
+
+h2{
+  font-size: 1.5rem;
+  margin-bottom: 1.25rem;
 }
 
 header {
@@ -50,7 +58,6 @@ header {
   display: inline-grid;
   align-items: center;
   justify-content: space-between;
-  position: fixed;
   top: 0;
 }
   
@@ -61,6 +68,8 @@ header {
   cursor: pointer;
   font-size: 25px;
   padding: 10px 20px;
+  position: fixed;
+
 }
   
 .overlay {
@@ -158,8 +167,17 @@ nav ul li {
   border-radius: 15px;
   margin: 2.5vh 1.75vh;
   font-size: .75rem;
-  height: 17.5vh;
-  width: 15vh;
+  height: 19vh;
+  width: 16vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  padding: .5rem .25rem;
+}
+
+.card > *{
+  margin: 0 auto .5rem auto;
 }
 
 .card-container{ 
@@ -167,6 +185,14 @@ nav ul li {
   grid-template-areas: "card1 card2" "card3 card4";
   align-items: center;
   justify-items: center;
+}
+
+.card p{
+  line-height: normal;
+}
+
+.card i{
+  font-size: 1.5rem;
 }
 
 .card1{
@@ -183,6 +209,26 @@ nav ul li {
 
 .card4{
   grid-area: card4;
+}
+
+.color-light-blue{
+  color: #73C3F4;
+}
+
+.color-yellow{
+  color: #FFCF54;
+}
+
+.color-pink{
+  color: #dd71c6;
+}
+
+.color-green{
+  color: #55A201;
+}
+
+.bold{
+  font-weight: bold;
 }
 
 #functioning{
