@@ -32,16 +32,16 @@ img{
   font-weight: bold;
   background-color: #dd71c6;
   margin: 0 auto;
-  padding: 3vw 6vw;
+  padding: 10px;
 }
 
 .button-2{
   background-color: #FFCF54;
 }
 
-h1, h2{
+h1, h2, h3{
   font-family: Libre Baskerville;
-  font-weight: 100;
+  font-weight: 400;
   font-size: 2rem;
   line-height: 2.5rem;
   width: 100%;
@@ -50,6 +50,10 @@ h1, h2{
 h2{
   font-size: 1.5rem;
   margin-bottom: 1.25rem;
+}
+
+h3{
+  font-size: 1.15rem;
 }
 
 header {
@@ -236,9 +240,87 @@ nav ul li {
   color: white;
 }
 
+table{
+    border-collapse: collapse;
+}
+
+table ul{
+  margin-top: 15px;
+}
+
+table li{
+  margin-bottom: 15px;
+}
+
+th{
+  border-bottom: 1px solid #73C3F4;
+}
+
+.table-header-pink{
+  border-bottom: 1px solid #dd71c6;
+}
+
+input[type='checkbox'] {
+  display: none;
+}
+
+.lbl-toggle {
+  font-size: .75rem;
+  text-align: start;
+  display: block;
+  cursor: pointer;
+  transition: all 0.25s ease-out;
+}
+
+.lbl-toggle::before {
+  content: '\f078';
+  display: inline-block;
+  font: var(--fa-font-solid);
+  vertical-align: middle;
+  margin-right: .7rem;
+  transform: translateX(250px);
+
+  transition: transform .2s ease-out;
+}
+
+.collapsible-content .content-inner {
+  background: rgba(162, 162, 162, 0.2);
+  border-bottom: 1px solid rgba(5, 5, 5, 0.45);
+
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  padding: .5rem 1rem;
+}
+
+.collapsible-content {
+  max-height: 0px;
+  overflow: hidden;
+
+  transition: max-height .25s ease-in-out;
+}
+
+.toggle:checked + .lbl-toggle + .collapsible-content {
+  max-height: 100vh;
+}
+
+.toggle:checked + .lbl-toggle::before {
+  transform: rotate(180deg) translateX(-250px);
+}
+
+.toggle:checked + .lbl-toggle {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.content-inner p{
+  font-size: .75rem;
+  text-align: start;
+}
+
 .small-logo{
   width: 50%;
 }
+
 
 /* ------------------------------------------------------------- */
 
