@@ -153,6 +153,10 @@ nav ul li {
   padding: 10vh 10vw 10vw 10vw;
 }
 
+.no-padding{
+  padding: 0;
+}
+
 .container > *{
   margin-bottom: 5vh;
 }
@@ -317,14 +321,37 @@ input[type='checkbox'] {
   text-align: start;
 }
 
+#about li{
+  list-style: none;
+  margin-bottom: 5vh;
+}
+
+#about .container{
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
 .small-logo{
   width: 50%;
+}
+
+footer div{
+  padding: 0 5vh;
 }
 
 
 /* ------------------------------------------------------------- */
 
 @media (min-width: 1024px){
+
+  .wrapper{
+    max-width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+      
+  }
 
   header{
     width: 75%;
@@ -345,6 +372,24 @@ input[type='checkbox'] {
 
   .button-toggle-menu {
     display: none;
+  }
+ 
+  .grid{
+    display: grid;
+    grid-template-areas: 
+    "info about links";
+  }
+
+  .info-container{
+    grid-area: info;
+  }
+
+  .about-container{
+    grid-area: about;
+  }
+
+  .links-container{
+    grid-area: links;
   }
 
 }
