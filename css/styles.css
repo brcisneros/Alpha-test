@@ -1,4 +1,4 @@
-html {
+html{
   scroll-behavior: smooth;
 }
 
@@ -56,16 +56,17 @@ h3{
   font-size: 1.15rem;
 }
 
-header {
+header{
   width: 100%;
   z-index: 3;
   display: inline-grid;
   align-items: center;
   justify-content: space-between;
   top: 0;
+  position: fixed;
 }
   
-.button-toggle-menu {
+.button-toggle-menu{
   position: absolute;
   top: 0;
   right: 0;
@@ -73,7 +74,6 @@ header {
   font-size: 25px;
   padding: 10px 20px;
   position: fixed;
-
 }
   
 .overlay {
@@ -106,9 +106,10 @@ header {
 header .logo{
   margin-top: 1.5vw;
   margin-left: 5vw;
+  width: 50%;
 }
 
-nav {
+nav{
   position: absolute;
   top: 0;
   bottom: 0;
@@ -126,14 +127,13 @@ nav a{
   margin: 0 auto;
 }
 
-
-nav ul {
+nav ul{
   list-style: none;
   padding: 20px 0;
   margin: 0;
 }
 
-nav ul li {
+nav ul li{
   padding: 10px 20px;
 }
 
@@ -143,7 +143,9 @@ nav ul li {
   background-color: rgba(255, 255, 255, .5);
   filter: blur(1px);
   -webkit-filter: blur(1px);
-  height: 50vw;
+  width: 250px;
+  height: 160px;
+  margin: 0 auto;
 }
 
 .container{ 
@@ -162,7 +164,10 @@ nav ul li {
 }
 
 #intro{
-  background-color: #FFD900;
+  background-image: url("../images/Background-color.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 74.6% 0;
   justify-content: center;
 }
 
@@ -175,8 +180,8 @@ nav ul li {
   border-radius: 15px;
   margin: 2.5vh 1.75vh;
   font-size: .75rem;
-  height: 19vh;
-  width: 16vh;
+  height: 120px;
+  width: 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -244,6 +249,10 @@ nav ul li {
   color: white;
 }
 
+.show-on-tentwentyfour{
+  display: none;
+}
+
 table{
     border-collapse: collapse;
 }
@@ -299,7 +308,6 @@ input[type='checkbox'] {
 .collapsible-content {
   max-height: 0px;
   overflow: hidden;
-
   transition: max-height .25s ease-in-out;
 }
 
@@ -323,7 +331,7 @@ input[type='checkbox'] {
 
 #about li{
   list-style: none;
-  margin-bottom: 5vh;
+  margin-bottom: 2.5vh;
 }
 
 #about .container{
@@ -335,49 +343,83 @@ input[type='checkbox'] {
   width: 50%;
 }
 
-footer div{
-  padding: 0 5vh;
+footer{
+  width: 80%;
+  margin: 0 auto;
 }
 
+.social > *{
+  margin-right: 8px;
+}
 
-/* ------------------------------------------------------------- */
-
-@media (min-width: 1024px){
+@media (min-width: 768px){
 
   .wrapper{
-    max-width: 80%;
+    width: 80%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-      
+    justify-content: center;   
   }
 
-  header{
-    width: 75%;
+  .second-wrapper{
+    width: 60%;
     margin: 0 auto;
   }
 
-  nav{
+  header{
     position: relative;
-    transform: none;
-    width: 100%;
+    background-color: #f9f9f9;
   }
 
-  nav ul li{
-    display: inline-block;
-    font-size: 1.5vh;
-    padding: 5px 10px;
+  header img{
+    margin-left: 40%;
   }
 
-  .button-toggle-menu {
-    display: none;
+  .button-toggle-menu{
+    margin-right: 10%;
   }
- 
+
+  #intro{
+    background-position: 96% 0;
+  }
+
+  #intro h1, #intro p{
+    text-align: start;
+    width: 50vw;
+  }
+
+  .card{
+    height: 150px;
+  }
+
+  .card-container{ 
+    grid-template-areas: "card1 card2 card3 card4";
+  }
+
+  table{
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  .lbl-toggle::before {
+    transform: translateX(375px);
+  }
+
+  .toggle:checked + .lbl-toggle::before {
+    transform: rotate(180deg) translateX(-375px);
+  }
+
+  .info-container{
+    width: 50%;
+    padding: 0 0 0 10%;
+  }
+
   .grid{
     display: grid;
     grid-template-areas: 
-    "info about links";
+    "info info info"
+    "about links links";
   }
 
   .info-container{
@@ -386,10 +428,143 @@ footer div{
 
   .about-container{
     grid-area: about;
+    padding: 0 0 0 30%;
   }
 
   .links-container{
     grid-area: links;
+    padding: 0 0 0 10%;
+  }
+
+  footer .wrapper{
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 1024px){
+
+  header{
+    display: flex;
+    position: absolute;
+    width: 80%;
+    margin-left: 10%;
+    background-color: transparent;
+    justify-content: space-evenly;
+  }
+
+  header .logo{
+    width: 10%;
+  }
+
+  nav{
+    position: relative;
+    transform: none;
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    margin-left: 10%;
+  }
+
+  nav ul li{
+    display: inline-flex;
+    margin: 0 .5vw;
+    padding: 0;
+    font-size: .75rem;
+  }
+
+  .button-toggle-menu {
+    display: none;
+  }
+ 
+  #intro{
+    background-position: 100%;
+    padding-top: 200px;
+  }
+
+  .dissapear-on-tentwentyfour{
+    display: none;
+  }
+
+  .show-on-tentwentyfour{
+    display: flex;
+  }
+
+  .intro-container{
+    display: grid;
+    grid-template-areas: 
+    "h1 countdown"
+    "paragraph paragraph";
+  }
+
+  #intro h1{
+    grid-area: h1;
+    width: 80%;
+    line-height: 3rem;
+    margin: 0 0 10px 0;
+  }
+
+  .countdown{
+    grid-area: countdown;
+    width: 33vw;
+    height: 100%;
+  }
+
+  #intro p{
+    grid-area: paragraph;
+    width: 50%;
+  }
+
+  #intro a{
+    margin-left: 10%;
+  }
+
+  .card{
+    height: 180px;
+    width: 160px;
+    font-size: large;
+  }
+
+  .card > *{
+    margin-bottom: 15px;
+  }
+
+  .func-grid{
+    display: grid;
+    grid-template-areas: 
+    "texts img"
+    "button img";
+  }
+
+  #functioning .texts{
+    grid-area: texts;
+  }
+
+  #functioning .button{
+    grid-area: button;
+  }
+
+  #functioning img{
+    grid-area: img;
+    width: 120%;
+  }
+
+  #consultations h2, #help p, #help h2{
+    text-align: center;
+  }
+
+  .lbl-toggle::before {
+    transform: translateX(50%);
+  }
+  
+  .toggle:checked + .lbl-toggle::before {
+    transform: rotate(180deg) translateX(-50%);
+  }
+
+  .grid{
+    grid-template-areas: 
+    "info about links";
+    grid-template-columns: 2fr 1fr 1fr;
   }
 
 }
