@@ -11,28 +11,48 @@
 </head>
 <body>
     <header>
-        <input class="toggle-menu" id="toggle-menu" type="checkbox" />
         <a class="logo" href="index.html"><img src="images\logo.png" alt=""></a>
         <nav>
-            <ul>
-                <li><a href="">About Us</a></li>
-                <li><a href="">Book Online</a></li>
-                <li><a href="">Weight Loss Programs</a></li>
-                <li><a href="">Real Patient Stories</a></li>
-                <li><a href="">Locations</a></li>
-                <li><a href="">Blog</a></li>
-                <li><a href="">Shop</a></li>
-                <li><a href="">Subscription</a></li>
+            <ul class="menu">
+                <li><a class="menuItem" href="">About Us</a></li>
+                <li><a class="menuItem" href="">Book Online</a></li>
+                <li><a class="menuItem" href="">Weight Loss Programs</a></li>
+                <li><a class="menuItem" href="">Real Patient Stories</a></li>
+                <li><a class="menuItem" href="">Locations</a></li>
+                <li><a class="menuItem" href="">Blog</a></li>
+                <li><a class="menuItem" href="">Shop</a></li>
+                <li><a class="menuItem" href="">Subscription</a></li>
             </ul>
+            <button class="mobileMenu">
+              <i class="fa-solid fa-bars"></i>
+            </button>
         </nav>
-        <label class="button-toggle-menu color-pink" for="toggle-menu"><i class="fa-solid fa-bars"></i></label>
-        <label class="overlay"  for="toggle-menu"></label>
-    </header>
+      </header>
     <section id="intro" class="container">
       <div class="intro-container wrapper container no-padding">
         <h1 class="center-text">Chicago's <span style="color:#dd71c6; font-family: Libre Baskerville;">Free</span> Medical Check-Up and Weight Loss Consutlation</h1>
         <p class="center-text smaller-text dissapear-on-tentwentyfour">Only <span style="color: #dd71c6;">11</span> spots available!</p>
-        <div class="countdown"></div>
+        <div class="countdown">
+          <p class="countdown-center">Your offer ends in:</p>
+          <div class="countdown-center color-light-blue">
+            <div class="countdown-tile">
+              DAYS
+              <div id="days" class="center-text"></div>
+            </div>
+            <div class="countdown-tile">
+              HOURS
+              <div id="hours" class="center-text"></div>
+            </div>
+            <div class="countdown-tile">
+              MINUTES
+              <div id="minutes" class="center-text"></div>
+            </div>
+            <div class="countdown-tile">
+              SECONDS
+              <div id="seconds" class="center-text"></div>
+            </div>
+          </div>
+        </div>
         <p>There are limited spots due to the Physicians schedule and the high demand for service. No credit card or insurance required.</p>
       </div>
       <a href="" class="button">Book my appointment</a>
@@ -126,125 +146,125 @@
       <div class="wrapper container no-padding second-wrapper">
         <h2>Frequently Asked Questions</h2>
         <div class="wrap-collabsible">
-            <input id="collapsible" class="toggle" type="checkbox">
-            <label for="collapsible" class="lbl-toggle">Why is it free?</label>
-            <div class="collapsible-content">
-              <div class="content-inner">
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia molestias ex laboriosam sit illo laudantium, architecto nesciunt optio porro asperiores?
-                </p>
-              </div>
-            </div>
+          <div class="collapsible-header">
+            <p class="faq-title">Why is it free?</p>
+            <button class="collapsible"><i class="fa-solid fa-chevron-down"></i></button>
+          </div>
+          <div class="collapsibleContent">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia molestias ex laboriosam sit illo laudantium, architecto nesciunt optio porro asperiores?
+            </p>
+          </div>
         </div>
         <div class="wrap-collabsible">
-            <input id="collapsible2" class="toggle" type="checkbox">
-            <label for="collapsible2" class="lbl-toggle">Do I need this if I've had my yearly medical check? What is the difference?</label>
-            <div class="collapsible-content">
-              <div class="content-inner">
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia molestias ex laboriosam sit illo laudantium, architecto nesciunt optio porro asperiores?
-                </p>
-              </div>
-            </div>
+          <div class="collapsible-header">
+            <p class="faq-title">Do I need this if I've had my yearly medical check? What is the difference?</p>
+            <button class="collapsible"><i class="fa-solid fa-chevron-down"></i></button>
+          </div>
+          <div class="collapsibleContent">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia molestias ex laboriosam sit illo laudantium, architecto nesciunt optio porro asperiores?
+            </p>
+          </div>
         </div>
         <div class="wrap-collabsible">
-            <input id="collapsible3" class="toggle" type="checkbox">
-            <label for="collapsible3" class="lbl-toggle">Can I bring another person to the appointment?</label>
-            <div class="collapsible-content">
-              <div class="content-inner">
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia molestias ex laboriosam sit illo laudantium, architecto nesciunt optio porro asperiores?
-                </p>
-              </div>
-            </div>
+          <div class="collapsible-header">
+            <p class="faq-title">Can I bring another person to the appointment?</p>
+            <button class="collapsible"><i class="fa-solid fa-chevron-down"></i></button>
+          </div>
+          <div class="collapsibleContent">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia molestias ex laboriosam sit illo laudantium, architecto nesciunt optio porro asperiores?
+            </p>
+          </div>
         </div>
         <div class="wrap-collabsible">
-            <input id="collapsible4" class="toggle" type="checkbox">
-            <label for="collapsible4" class="lbl-toggle">How long does it take?</label>
-            <div class="collapsible-content">
-              <div class="content-inner">
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia molestias ex laboriosam sit illo laudantium, architecto nesciunt optio porro asperiores?
-                </p>
-              </div>
-            </div>
+          <div class="collapsible-header">
+            <p class="faq-title">How long does it take?</p>
+            <button class="collapsible"><i class="fa-solid fa-chevron-down"></i></button>
+          </div>
+          <div class="collapsibleContent">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia molestias ex laboriosam sit illo laudantium, architecto nesciunt optio porro asperiores?
+            </p>
+          </div>
         </div>
         <div class="wrap-collabsible">
-            <input id="collapsible5" class="toggle" type="checkbox">
-            <label for="collapsible5" class="lbl-toggle">What if I have to cancel or if I'm not sure I'll be able to make it?</label>
-            <div class="collapsible-content">
-              <div class="content-inner">
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia molestias ex laboriosam sit illo laudantium, architecto nesciunt optio porro asperiores?
-                </p>
-              </div>
-            </div>
+          <div class="collapsible-header">
+            <p class="faq-title">What if I have to cancel or if I'm not sure I'll be able to make it?</p>
+            <button class="collapsible"><i class="fa-solid fa-chevron-down"></i></button>
+          </div>
+          <div class="collapsibleContent">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia molestias ex laboriosam sit illo laudantium, architecto nesciunt optio porro asperiores?
+            </p>
+          </div>
         </div>
         <div class="wrap-collabsible">
-            <input id="collapsible6" class="toggle" type="checkbox">
-            <label for="collapsible6" class="lbl-toggle">Do I need to bring anything with me?</label>
-            <div class="collapsible-content">
-              <div class="content-inner">
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia molestias ex laboriosam sit illo laudantium, architecto nesciunt optio porro asperiores?
-                </p>
-              </div>
-            </div>
+          <div class="collapsible-header">
+            <p class="faq-title">Do I need to bring anything with me?</p>
+            <button class="collapsible"><i class="fa-solid fa-chevron-down"></i></button>
+          </div>
+          <div class="collapsibleContent">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia molestias ex laboriosam sit illo laudantium, architecto nesciunt optio porro asperiores?
+            </p>
+          </div>
         </div>
         <div class="wrap-collabsible">
-            <input id="collapsible7" class="toggle" type="checkbox">
-            <label for="collapsible7" class="lbl-toggle">What if I don't have insurance?</label>
-            <div class="collapsible-content">
-              <div class="content-inner">
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia molestias ex laboriosam sit illo laudantium, architecto nesciunt optio porro asperiores?
-                </p>
-              </div>
-            </div>
+          <div class="collapsible-header">
+            <p class="faq-title">What if I don't have insurance?</p>
+            <button class="collapsible"><i class="fa-solid fa-chevron-down"></i></button>
+          </div>
+          <div class="collapsibleContent">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia molestias ex laboriosam sit illo laudantium, architecto nesciunt optio porro asperiores?
+            </p>
+          </div>
         </div>
         <div class="wrap-collabsible">
-            <input id="collapsible8" class="toggle" type="checkbox">
-            <label for="collapsible8" class="lbl-toggle">Do the weight loss programs you offer work?</label>
-            <div class="collapsible-content">
-              <div class="content-inner">
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia molestias ex laboriosam sit illo laudantium, architecto nesciunt optio porro asperiores?
-                </p>
-              </div>
-            </div>
+          <div class="collapsible-header">
+            <p class="faq-title">Do the weight loss programs you offer work?</p>
+            <button class="collapsible"><i class="fa-solid fa-chevron-down"></i></button>
+          </div>
+          <div class="collapsibleContent">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia molestias ex laboriosam sit illo laudantium, architecto nesciunt optio porro asperiores?
+            </p>
+          </div>
         </div>
         <div class="wrap-collabsible">
-            <input id="collapsible9" class="toggle" type="checkbox">
-            <label for="collapsible9" class="lbl-toggle">What's the catch?</label>
-            <div class="collapsible-content">
-              <div class="content-inner">
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia molestias ex laboriosam sit illo laudantium, architecto nesciunt optio porro asperiores?
-                </p>
-              </div>
-            </div>
+          <div class="collapsible-header">
+            <p class="faq-title">What's the catch?</p>
+            <button class="collapsible"><i class="fa-solid fa-chevron-down"></i></button>
+          </div>
+          <div class="collapsibleContent">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia molestias ex laboriosam sit illo laudantium, architecto nesciunt optio porro asperiores?
+            </p>
+          </div>
         </div>
         <div class="wrap-collabsible">
-            <input id="collapsible10" class="toggle" type="checkbox">
-            <label for="collapsible10" class="lbl-toggle">Will I have to exhaust myself in the gym to make it work?</label>
-            <div class="collapsible-content">
-              <div class="content-inner">
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia molestias ex laboriosam sit illo laudantium, architecto nesciunt optio porro asperiores?
-                </p>
-              </div>
-            </div>
+          <div class="collapsible-header">
+            <p class="faq-title">Will I have to exhaust myself in the gym to make it work?</p>
+            <button class="collapsible"><i class="fa-solid fa-chevron-down"></i></button>
+          </div>
+          <div class="collapsibleContent">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia molestias ex laboriosam sit illo laudantium, architecto nesciunt optio porro asperiores?
+            </p>
+          </div>
         </div>
         <div class="wrap-collabsible">
-            <input id="collapsible11" class="toggle" type="checkbox">
-            <label for="collapsible11" class="lbl-toggle">Where are you located?</label>
-            <div class="collapsible-content">
-              <div class="content-inner">
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia molestias ex laboriosam sit illo laudantium, architecto nesciunt optio porro asperiores?
-                </p>
-              </div>
-            </div>
+          <div class="collapsible-header">
+            <p class="faq-title">Where are you located?</p>
+            <button class="collapsible"><i class="fa-solid fa-chevron-down"></i></button>
+          </div>
+          <div class="collapsibleContent">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia molestias ex laboriosam sit illo laudantium, architecto nesciunt optio porro asperiores?
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -254,8 +274,8 @@
           <img class="small-logo" src="images\logo.png" alt="">
           <ul>
               <li>A Better Weigh Medical Weight Loss Center offers a weight loss program dedicated to helping you achieve long term weight loss success with the use of FDA approved medication.</li>
-              <li><i class="fa-solid fa-location-dot color-pink"></i>Head Office: 1931 W 95th Streeet Chicago IL, 60643</li>
-              <li><i class="fa-solid fa-phone color-pink"></i>Phone: 773-496-4222</li>
+              <li><i class="fa-solid fa-location-dot color-pink"></i><span style="font-weight: bolder;">Head Office:</span> 1931 W 95th Streeet Chicago IL, 60643</li>
+              <li><i class="fa-solid fa-phone color-pink"></i><span style="font-weight: bolder;">Phone:</span> 773-496-4222</li>
           </ul>            
         </div>
         <div class="about-container container">
@@ -290,6 +310,9 @@
           <p>Copyright by A Better Weigh inc. All rights reserved.</p>
         </div>
     </footer>
+    <button onclick="topFunction()" id="topButton" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
     <script src="https://kit.fontawesome.com/974f3cdd71.js" crossorigin="anonymous"></script>
+    <script src="js\animations.js"></script>
+    <script src="js\countdown.js"></script>
 </body>
 </html>

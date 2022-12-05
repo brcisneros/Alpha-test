@@ -8,15 +8,12 @@ html{
   margin: 0;
   padding: 0;
   text-decoration: none;
+  transition: .25s ease-in-out;
 }
 
 body{
   font-size: 1rem;
   line-height: 1.5rem;
-}
-
-img{
-  width: 100%;
 }
 
 .smaller-text{
@@ -25,6 +22,32 @@ img{
 
 .center-text{
   text-align: center;
+}
+
+.color-light-blue{
+  color: #73C3F4;
+}
+
+.color-yellow{
+  color: #FFCF54;
+}
+
+.color-pink{
+  color: #dd71c6;
+}
+
+.color-green{
+  color: #55A201;
+}
+
+.bold{
+  font-weight: bold;
+}
+
+button{
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
 }
 
 .button, .button-2{
@@ -37,6 +60,20 @@ img{
 
 .button-2{
   background-color: #FFCF54;
+}
+
+#topButton{
+  display: none;
+  position: fixed;
+  padding: 5px 10px;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 1.5rem;
+  background-color: white;
+  border: solid 2px #e08acd;
+  color: #e08acd;
+  border-radius: 10px;
 }
 
 h1, h2, h3{
@@ -56,73 +93,54 @@ h3{
   font-size: 1.15rem;
 }
 
+header .logo{
+  margin-top: 1.5vw;
+  margin-left: 5vw;
+}
+
+.logo img{
+  width: 50%;
+}
+
 header{
   width: 100%;
   z-index: 3;
-  display: inline-grid;
+  display: flex;
   align-items: center;
   justify-content: space-between;
   top: 0;
   position: fixed;
 }
-  
-.button-toggle-menu{
-  position: absolute;
-  top: 0;
-  right: 0;
-  cursor: pointer;
-  font-size: 25px;
-  padding: 10px 20px;
+
+.mobileMenu {
   position: fixed;
+  z-index: 100;
+  top: 1rem;
+  right: 1rem;
+  color: #e08acd;
+  font-size: 1.5rem;
 }
-  
-.overlay {
+
+.menu{
   position: fixed;
   top: 0;
-  right: 0;
   bottom: 0;
   left: 0;
-  background: rgba(255, 217, 0, .85);
-  opacity: 0;
-  pointer-events: none;
-  transition: 0.3s opacity ease-in-out;
+  width: 100vw;
+  height: 100vh;
+  transform: translateX(-100%);
+  transition: 0.3s transform linear;
+  z-index: 1;
+  background-color: rgba(255, 217, 0, .90);
+  color: white;
+  font-weight: 600;
 }
-  
-.toggle-menu {
-  -webkit-appearance: none;
-      -moz-appearance: none;
-          appearance: none;
-}
-  
-.toggle-menu:checked ~ nav {
+
+.showElementX{
   transform: translateX(0);
 }
 
-.toggle-menu:checked ~ .overlay {
-  pointer-events: initial;
-  opacity: 1;
-}
-
-header .logo{
-  margin-top: 1.5vw;
-  margin-left: 5vw;
-  width: 50%;
-}
-
-nav{
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  width: 300px;
-  transform: translateX(-100%);
-  will-change: transform;
-  transition: 0.3s transform linear;
-  z-index: 1;
-}
-
 nav a{
-  display: inline-block;
   color: currentColor;
   margin: 0 auto;
 }
@@ -138,14 +156,37 @@ nav ul li{
 }
 
 .countdown{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
   border: solid transparent;
   border-radius: 25px;
   background-color: rgba(255, 255, 255, .5);
-  filter: blur(1px);
-  -webkit-filter: blur(1px);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
   width: 250px;
   height: 160px;
   margin: 0 auto;
+}
+
+.countdown-tile{
+  height: 65px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.countdown-center{
+  display: flex;
+  width: auto !important;
+  justify-content: space-around;
+  font-size: .75rem;
+}
+
+#days, #hours, #minutes, #seconds{
+  font-size: 1rem;
+  font-weight: 600;
+  color: black;
 }
 
 .container{ 
@@ -224,26 +265,6 @@ nav ul li{
   grid-area: card4;
 }
 
-.color-light-blue{
-  color: #73C3F4;
-}
-
-.color-yellow{
-  color: #FFCF54;
-}
-
-.color-pink{
-  color: #dd71c6;
-}
-
-.color-green{
-  color: #55A201;
-}
-
-.bold{
-  font-weight: bold;
-}
-
 #functioning{
   background-color: #73c3f4;
   color: white;
@@ -254,7 +275,7 @@ nav ul li{
 }
 
 table{
-    border-collapse: collapse;
+  border-collapse: collapse;
 }
 
 table ul{
@@ -273,60 +294,31 @@ th{
   border-bottom: 1px solid #dd71c6;
 }
 
-input[type='checkbox'] {
-  display: none;
+.collapsible-header{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
-.lbl-toggle {
-  font-size: .75rem;
-  text-align: start;
-  display: block;
-  cursor: pointer;
-  transition: all 0.25s ease-out;
-}
-
-.lbl-toggle::before {
-  content: '\f078';
-  display: inline-block;
-  font: var(--fa-font-solid);
-  vertical-align: middle;
-  margin-right: .7rem;
-  transform: translateX(250px);
-
-  transition: transform .2s ease-out;
-}
-
-.collapsible-content .content-inner {
-  background: rgba(162, 162, 162, 0.2);
-  border-bottom: 1px solid rgba(5, 5, 5, 0.45);
-
-  border-bottom-left-radius: 7px;
-  border-bottom-right-radius: 7px;
-  padding: .5rem 1rem;
-}
-
-.collapsible-content {
-  max-height: 0px;
+.collapsibleContent{
+  height: 0;
   overflow: hidden;
-  transition: max-height .25s ease-in-out;
+  background-color: #f1f1f1;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  font-size: smaller;
 }
 
-.toggle:checked + .lbl-toggle + .collapsible-content {
-  max-height: 100vh;
+.collapsibleContent p {
+  padding: 10px 18px;
 }
 
-.toggle:checked + .lbl-toggle::before {
-  transform: rotate(180deg) translateX(-250px);
+.active .collapsibleContent{
+  height: auto;
 }
 
-.toggle:checked + .lbl-toggle {
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-}
-
-.content-inner p{
-  font-size: .75rem;
-  text-align: start;
+.active button{
+  transform: rotate(-180deg);
 }
 
 #about li{
@@ -350,6 +342,7 @@ footer{
 
 .social > *{
   margin-right: 8px;
+  font-size: 1rem;
 }
 
 @media (min-width: 768px){
@@ -358,13 +351,10 @@ footer{
     width: 80%;
     margin: 0 auto;
     display: flex;
-    flex-direction: column;
-    justify-content: center;   
   }
 
   .second-wrapper{
     width: 60%;
-    margin: 0 auto;
   }
 
   header{
@@ -373,11 +363,7 @@ footer{
   }
 
   header img{
-    margin-left: 40%;
-  }
-
-  .button-toggle-menu{
-    margin-right: 10%;
+    margin-left: 70%;
   }
 
   #intro{
@@ -400,14 +386,6 @@ footer{
   table{
     width: 60%;
     margin: 0 auto;
-  }
-
-  .lbl-toggle::before {
-    transform: translateX(375px);
-  }
-
-  .toggle:checked + .lbl-toggle::before {
-    transform: rotate(180deg) translateX(-375px);
   }
 
   .info-container{
@@ -443,51 +421,55 @@ footer{
 }
 
 @media (min-width: 1024px){
-
-  header{
-    display: flex;
-    position: absolute;
-    width: 80%;
-    margin-left: 10%;
-    background-color: transparent;
-    justify-content: space-evenly;
-  }
-
-  header .logo{
-    width: 10%;
-  }
-
-  nav{
-    position: relative;
-    transform: none;
-    display: flex;
-    flex-direction: row;
-    width: 90%;
-    margin-left: 10%;
-  }
-
-  nav ul li{
-    display: inline-flex;
-    margin: 0 .5vw;
-    padding: 0;
-    font-size: .75rem;
-  }
-
-  .button-toggle-menu {
-    display: none;
-  }
- 
-  #intro{
-    background-position: 100%;
-    padding-top: 200px;
-  }
-
+  
   .dissapear-on-tentwentyfour{
     display: none;
   }
 
   .show-on-tentwentyfour{
     display: flex;
+  }
+
+  header{
+    position: absolute;
+    width: 80%;
+    margin-left: 10%;
+    background-color: transparent;
+  }
+
+  .logo img{
+    width: 125px;
+  }
+
+  .mobileMenu {
+    display: none;
+  }
+
+  nav{
+    position: relative;
+    width: 100%;
+    margin-left: 10%;
+    margin-bottom: 6%;
+  }
+
+  .menu{
+    position: absolute;
+    background-color: transparent;
+    transform: translateX(0);
+    color: black;
+    font-weight: 400;
+    top: 10px;
+  }  
+
+  .menu li{
+    display: inline-flex;
+    margin: 0 .5vw;
+    padding: 0;
+    font-size: .75rem;
+  }
+ 
+  #intro{
+    padding-top: 200px;
   }
 
   .intro-container{
@@ -498,16 +480,24 @@ footer{
   }
 
   #intro h1{
-    grid-area: h1;
     width: 80%;
     line-height: 3rem;
     margin: 0 0 10px 0;
   }
 
   .countdown{
-    grid-area: countdown;
     width: 33vw;
     height: 100%;
+  }
+
+  .countdown-tile{
+    height: 75px;
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+
+  #days, #hours, #minutes, #seconds{
+    font-size: 2rem;
   }
 
   #intro p{
@@ -553,18 +543,18 @@ footer{
     text-align: center;
   }
 
-  .lbl-toggle::before {
-    transform: translateX(50%);
-  }
-  
-  .toggle:checked + .lbl-toggle::before {
-    transform: rotate(180deg) translateX(-50%);
-  }
-
   .grid{
     grid-template-areas: 
     "info about links";
     grid-template-columns: 2fr 1fr 1fr;
+  }
+
+  .info-container{
+    width: 100%;
+  }
+
+  .info-container img{
+    width: 25%;
   }
 
 }
